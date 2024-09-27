@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\QuemSomosController.cs" />
+    <Compile Remove="Models\Pesquisa.cs" />
   </ItemGroup>
 
   <ItemGroup>
