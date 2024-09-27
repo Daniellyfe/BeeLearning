@@ -1,24 +1,31 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+body.Beeflix {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black; /* Cor desejada */
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+   
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .container1 {
@@ -27,6 +34,20 @@ body {
     align-items: center;
     height: 10vh; /* Faz com que a altura do container ocupe toda a tela */
 }
+
+.containernav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Faz com que a altura do container ocupe toda a tela */
+}
+
+
+
+
+
+
 
 .imagemlogo {
     display: flex;
@@ -65,3 +86,195 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+
+
+/*CARROCEL*/
+
+#carouselExample {
+    width: 60%;
+    margin: 0px auto;
+    margin-top:150px;
+}
+#carouselExample img {
+    height: 300px;
+}
+
+.organizadiv1 {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    margin-top: 400px;
+    width: 100%;
+    background-color: #FFF4AB;
+}
+
+
+.image-container {
+    position: relative;
+    text-align: center; /* Centraliza a imagem horizontalmente */
+    overflow: visible;
+}
+
+    .image-container img {
+        width: 500px; /* Ajuste a largura conforme necessário */
+        max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+
+
+
+
+/*ESTUDANTES*/
+.imagem-container2 {
+    display: flex; /* Faz as imagens ficarem lado a lado */
+    justify-content: center;
+    margin-top: 200px;
+    gap: 110px;
+}
+
+    .imagem-container2 img {
+        width: 200px; /* Tamanho das imagens, você pode ajustar */
+        margin-right: 10px; /* Espaço entre as imagens */
+
+    }
+    .imagem-container2 .item {
+        text-align: center; /* Centraliza o texto dentro de cada contêiner */
+       
+    }
+
+
+/*FOTOS3*/
+.imagem-container4 {
+    display: flex; /* Faz as imagens ficarem lado a lado */
+    justify-content: center;
+    margin-top: 200px;
+    gap: 100px;
+}
+
+/*PortuguesMatérias*/
+
+.alinhaportugues1 {
+    display: flex;
+    justify-content: space-between; /* Coloca a imagem à esquerda e o h1 à direita */
+    align-items: center; /* Alinha verticalmente no centro */
+    width: 100%; /* Garante que a div ocupe toda a largura */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BEEFLIX*/
+
+.alinhaflix2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.alinhaflix1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 200px;
+}
+
+div.cardflix {
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+img.imgflix {
+    max-width: 100%; 
+    width: 300px;
+    height:auto;
+}
+
+div.titleflix {
+    text-align: center;
+}
+
+.buttonflix {
+    text-align: center;
+    background-color: #ffba00;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************BOTÃO PESQUISAR************************/
+
+.search-container {
+    text-align: center; /* Centraliza a barra de pesquisa */
+    margin-top: 50px;
+}
+
+.search-input {
+    justify-content:center;
+    background-color: white;
+    padding: 10px; /* Espaçamento interno */
+    width: 300px; /* Largura da barra de pesquisa */
+    border: 2px solid #FFBA00; /* Cor da borda */
+    border-radius: 5px; /* Borda arredondada */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.search-button {
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    background-color: #FFBA00; /* Cor de fundo do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    margin-left: 5px; /* Espaço entre a barra de pesquisa e o botão */
+}
+
+
+
+
+

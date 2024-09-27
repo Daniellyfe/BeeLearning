@@ -17,7 +17,75 @@ namespace BeeLearning.Controllers
         {
             return View();
         }
+        public IActionResult Quem()
+        {
+            return View();
+        }
 
+        public IActionResult Beeflix()
+        {
+            return View();
+        }
+        /**************Matérias**************/
+        public IActionResult Linguagens()
+        {
+            return View();
+        }
+
+
+        public IActionResult Portugues()
+        {
+            return View();
+        }
+
+
+        public IActionResult Fisica()
+        {
+            return View();
+        }
+
+        public IActionResult Quimica()
+        {
+            return View();
+        }
+
+        public IActionResult Matematica()
+        {
+            return View();
+        }
+
+
+        public IActionResult Historia()
+        {
+            return View();
+        }
+
+
+        public IActionResult Geografia()
+        {
+            return View();
+        }
+
+        public IActionResult Biologia()
+        {
+            return View();
+        }
+        public IActionResult Tecnologia()
+        {
+            return View();
+        }
+
+        public IActionResult Sociologia()
+        {
+            return View();
+        }
+
+        public IActionResult Filosofia()
+        {
+            return View();
+        }
+
+        /***********************PRIVACIDADE************************/
         public IActionResult Privacy()
         {
             return View();

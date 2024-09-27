@@ -1,20 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Beelearning.Models;
+using BeeLearning.Models;
 
-namespace Beelearning.Data
+namespace BeeLearning.Data
 {
-    public class BeelearningContext : DbContext
+    public class BeeLearningContext : DbContext
     {
-        public BeelearningContext(DbContextOptions<BeelearningContext> options)
+        public BeeLearningContext(DbContextOptions<BeeLearningContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Aula> Aulas { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Aula>().ToTable("Aula");
-        }
     }
 }

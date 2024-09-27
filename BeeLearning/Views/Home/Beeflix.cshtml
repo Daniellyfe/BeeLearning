@@ -1,0 +1,993 @@
+﻿@{
+    ViewData["Title"] = "Beeflix";
+}
+<body class="Beeflix" style=" margin-bottom: 150px;">
+    <title>Selecionar Matéria</title>
+
+
+    <h1 style="color:#FFBA00;text-align:center; font-weight:900; text-align:center; margin-top: 70px; margin-bottom: 100px; font-size: 200px;">BEEFLIX</h1>
+
+
+
+
+    @*************************** BOTÃO PESQUISAR *********************************@
+
+
+    <div class="search-container d-flex" style="justify-content:center">
+
+        <input type="search" id="searchInput" class="search-input" placeholder="Pesquisar..." required>
+
+
+        <button type="button" class="search-button" onclick="filterMovies()">Pesquisar</button>
+
+        <!-- Spinner inicialmente oculto -->
+
+    </div>
+    <div class="d-flex" style="justify-content: center; margin-top:50px">
+        <div class="spinner-border text-warning" role="status" id="loadingSpinner" style="display: none;">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
+    </div>
+
+    <div class="results" id="resultsContainer"></div>
+
+
+
+
+
+    @* <div class="search-container">
+    <input type="search" id="searchInput" class="search-input" placeholder="Pesquisar..." required>
+    <button type="button" class="search-button" onclick="filterMovies()">Pesquisar</button>
+    </div>
+    <div class="results" id="resultsContainer"></div> *@
+    @********************************************************************************@
+
+
+
+    <h2 style="color:#FFBA00;text-align:center; margin-top:150px; font-weight:600; text-align:center; font-size: 40px;">Filmes de Humanas</h2>
+    @*************************** CARTÕES *********************************@
+    <div class="alinhaflix2 btn-group" style="margin-top: 60px">
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/ofilme1964.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">1964: O Brasil entre armas e lutas completo dublado </h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=yTenWQHRPIg&ab_channel=BrasilParalelo" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Anne Frank.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">The diary of Anne Frank</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=G7gpOiETg2k&ab_channel=PrincessDiana" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/2filhosdefrancisco.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">2 Filhos de Francisco</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=PRJ5vjkaPlo&ab_channel=Filmesbrasilplay" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/1914Aprimeiraguerra.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">1914 A Primeira Guerra</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=GHreZQDXXvI" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/CLEOPATRA.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Cleopatra</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=p0jqBuNvvs0&ab_channel=JCCLASSICS" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Chocholate.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center">Chocolate</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=kGxHo3Fjoyw&ab_channel=AdrenalinaFreezoneBR" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/luther.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Luther</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=HRnVcYZqNTY&ab_channel=CanalaPalavra" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/homosapiens.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Homo Sapiens</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=9mkLmxUkhRw&ab_channel=BestDocumentary" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Independência ou morte.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Independência ou morte</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=sGr6lhUizjc&ab_channel=DomMaster" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Meunomesara.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Meu nome é Sara</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=8djl37iIpyE&ab_channel=FilmPlus" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/race.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Race</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=kj5X2X0IAgg&ab_channel=AndreBatista" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/TIRADENTES.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Tiradentes</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=1i3FyTd0pAo&ab_channel=%F0%9D%93%9F%F0%9D%93%BB%F0%9D%93%B8%F0%9D%93%AF.%F0%9D%93%94%F0%9D%93%B6%C3%AD%F0%9D%93%B5%F0%9D%93%B2%F0%9D%93%B8%F0%9D%93%A2%F0%9D%93%AA%F0%9D%93%BB%F0%9D%93%AD%F0%9D%93%AE" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/ODISSÉIA.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A Odisséia</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=LA1pOrHAG7I&ab_channel=PENSAR%26ACREDITAR" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O PRINCIPE DA PERSIA.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O principe da persia</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=Ch3SSg7h4-U&ab_channel=EntertainmentHut" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/The Fall of The Roman Empire.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">The Fall of The Roman Empire</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=8K1BHf6Z-JA&ab_channel=CNCanalNostalgia" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/juliuscaesar.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Julius Caesar</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=e8UXW85j3ck&ab_channel=Film%26ClipsemPortugu%C3%AAs" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/temposmodernos.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Tempos Modernos</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=Bv1sdRGRb8k&ab_channel=486MarketingDigital" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Napoleão.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Napoleão</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=HF9LP4m8laA&ab_channel=CineOp%C3%A7%C3%B5es" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Lampião e Maria Bonita.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Lampião e Maria Bonita</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=JWKE5mtg_qs&ab_channel=SobreAlagoas" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/marieantoinette.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Maria Antonieta</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=lhHyQQf0Xzw&ab_channel=VitClips" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O candidato honesto.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O candidato honesto</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=BALIFeP_y-4&ab_channel=JBFilmeseAfins" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O lobo de wall street.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O lobo de wall street</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=ToDmOMKO9Ok&ab_channel=Sess%C3%A3oNews-Resumindo" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Amazônia.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Amazônia</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=P_k9s9dVPq8&ab_channel=Document%C3%A1riosGerais" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Tainá.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Tainá</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=OpUtvobjrP8&ab_channel=GabriellaMariaOficial" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @*************************** CARTÕES EXATAS *********************************@
+    <h2 style="color:#FFBA00;text-align:center; margin-top:150px; font-weight:600; text-align:center; font-size: 40px;">Filmes de Exatas</h2>
+    @*************************** CARTÕES EXATAS *********************************@
+    <div class="alinhaflix2 btn-group" style="margin-top: 60px">
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O jogo da imitação.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O jogo da imitação</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=lRid96uWpqo&ab_channel=JulianoBettim" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Uma mente brilhante.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Uma mente brilhante</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O substituto.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O substituto</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=SRvJrxsrtsE&ab_channel=LucasPedroso" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/A teoria de Tudo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A teoria de Tudo</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=UL2vJv8d2XQ&ab_channel=SandroCardinali" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Donald no País da Matemática.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Donald no País da Matemática</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=wbftu093Yqk&ab_channel=Educa%C3%A7%C3%A3oDocument%C3%A1rios" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Quebrando a banca.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Quebrando a banca</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=qAREqYVF2IQ&ab_channel=Clube4KPlus" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O homem que viu o infinito.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O homem que viu o infinito</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=ySNH1L-4MFA&ab_channel=assistir%3A" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Estrelas além do tempo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Estrelas além do tempo</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=Nl4vxTs0V-s&ab_channel=InstitutoPrincipia" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/sala de fermats.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">sala de fermats</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=tdIhwqKYwpE&ab_channel=chuckyv%C3%ADdeosde...%C2%BF%C2%BF%C2%BF" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Enigma.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Enigma</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=lRid96uWpqo&ab_channel=JulianoBettim" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O matemático.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O matemático</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=E7omgyHG7dU&ab_channel=FilmPlus" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        @*************************** CARTÕES NATUREZA *********************************@
+        <h2 style="color:#FFBA00;text-align:center; margin-top:150px; font-weight:600; text-align:center; font-size: 40px;">Filmes de Natureza</h2>
+        @*************************** CARTÕES NATUREZA *********************************@
+        <div class="alinhaflix2 btn-group" style="margin-top: 60px">
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Vida de insetos.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Vida de insetos</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=j5HYd6T6gAA&ab_channel=Entretenimento" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Wall-e.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Wall-e</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=K7cUHfu39Ek&ab_channel=Souza_Filmes%F0%9F%87%A7%F0%9F%87%B7" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Epidemia.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Epidemia</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=fCSuWiZnQg0&ab_channel=GustavoJustino" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Chernobyl.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Chernobyl</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=BQ24-npjB_8&ab_channel=HDFilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O físico.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O físico</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=uJBQFvf_QPI&ab_channel=PauloFelix" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Muito além do peso.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Muito além do peso</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=8UGe5GiHCT4&ab_channel=MariaFarinhaFilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O doutor da felicidade.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O doutor da felicidade</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=2Krtj3J7gGQ&ab_channel=AdrenalinaFreezoneBR" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Mãos talentosas.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Mãos talentosas</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=U6O6ZpKyXa8&ab_channel=MayaraSales" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/a era do gelo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A era do gelo</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=t_H_RiHrbNY&ab_channel=MarronneNascimento" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/zooo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Zoo</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=-_ltvWL0gIQ&ab_channel=Dami%C3%A3oRochaoficial" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/o bom dinossauro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O bom dinossauro</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=Bgvvc1wj1vM&ab_channel=CineGames" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/vida de dinossauro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A vida de um dinossauro</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=svJf7szvibA&ab_channel=AnimatedViralMovies" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Onde nasce a esperança.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Onde nasce a esperança</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=GTKjVV0uszw&ab_channel=AmandaCimFam" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Uma viagem inesperada.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Uma viagem inesperada</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=Xv6sIfaG6nk&ab_channel=AnjosAzulpersonalizados" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Quase Deuses.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Quase Deuses</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=kdM_TNxzEUc&ab_channel=DI%C3%81RIODEUMGUERREIRO" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Minúsculos.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Minúsculos</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=EpQK_y0vW4E&ab_channel=CineAnimado" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="cardflix" style="width: 18rem;">
+        <img src="~/Img/Gripe aviária a epidemia.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align:center; color:white">Gripe aviária a epidemia</h5>
+
+            <div style="margin-top:10px; display: flex; justify-content: center">
+                <a href="" class="buttonflix">Assistir</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cardflix" style="width: 18rem;">
+        <img src="~/Img/A lei da Água.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align:center; color:white">A lei da Água</h5>
+            <div style="margin-top:10px; display: flex; justify-content: center">
+                <a href="" class="buttonflix">Assistir</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cardflix" style="width: 18rem;">
+        <img src="~/Img/Nise.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align:center; color:white">Nise</h5>
+            <div style="margin-top:10px; display: flex; justify-content: center">
+                <a href="" class="buttonflix">Assistir</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cardflix" style="width: 18rem;">
+        <img src="~/Img/Zootopia.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align:center; color:white">Zootopia</h5>
+
+            <div style="margin-top:10px; display: flex; justify-content: center">
+                <a href="" class="buttonflix">Assistir</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    @*************************** CARTÕES LINGUAGENS *********************************@
+    <h2 style="color:#FFBA00;text-align:center; margin-top:150px; font-weight:600; text-align:center; font-size: 40px;">Filmes de Linguagens</h2>
+    @*************************** CARTÕES LINGUAGENS *********************************@
+    <div class="alinhaflix2 btn-group" style="margin-top: 60px">
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Os inconfidentes.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Os inconfidentes</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=axw7x6XChFw&ab_channel=Linguagemepoesia%23dendicasa" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Central do Brasil.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Central do Brasil</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=0Z48OJtJEdk&ab_channel=PictureReview" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Dona Flor e seus dois maridos.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Dona Flor e seus dois maridos</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=UpOXP74Cn0o&ab_channel=Toriainvogue" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Sociedade dos poetas mortos.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Sociedade dos poetas mortos</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=PKGsGSoeCPE&ab_channel=Mauricyu%27sfilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Língua - vidas em português.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Língua - vidas em português</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=JBmLzbjmhhg&ab_channel=J.P.H." class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/A menina Índigo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A menina Índigo</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=QCNJsWWKLJ4&ab_channel=AEEAKAssocia%C3%A7%C3%A3odeEstudosEspiritasAllanKardec" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Meu pé de laranja lima.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Meu pé de laranja lima</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=g9lKYPpsh4c&ab_channel=AcervodeFilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Além da Sala de Aula.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Além da Sala de Aula</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=JNqRzOfm1Lc&ab_channel=Filmes%26Maquetes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Com amor, Van Gogh.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Com amor, Van Gogh</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=WG4RJxnLjb8&ab_channel=VideoFlix" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Menina de Ouro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Menina de Ouro</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=g4JxeCYWGvA&ab_channel=MiroLoschiavo" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Karatê Kid.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Karatê Kid</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=EaLUny7r11o&ab_channel=MovieReview" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Senna.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Senna</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=-sffU9rPpfc&ab_channel=PAIX%C3%83OF1" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Vidas Secas.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Vidas Secas</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=82AIAaoH7M8&ab_channel=%C3%81GUADEMURINGA" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O fantasma da ópera.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O fantasma da ópera</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=fiQ7NbQxLBs&ab_channel=MardenTeixeiraLima" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Sítio do picapau amarelo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Sítio do picapau amarelo</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=TNfyrxDpQ6I&ab_channel=Jo%C3%A3oAraujo" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Romeu e Julieta.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Romeu e Julieta</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=-_kreEzxI3U&ab_channel=Suh" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/122.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Divertidamente</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=pXkrKylMPUs&ab_channel=MovieScenes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Jogada de Rei.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Jogada de Rei</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=axw7x6XChFw&ab_channel=Linguagemepoesia%23dendicasa" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Inteligência artificial.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Inteligência artificial</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=0Z48OJtJEdk&ab_channel=PictureReview" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/A rede social.png class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A rede social</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=UpOXP74Cn0o&ab_channel=Toriainvogue" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Hacker.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Hacker</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=PKGsGSoeCPE&ab_channel=Mauricyu%27sfilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/O menino da internet.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">O menino da internet</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=JBmLzbjmhhg&ab_channel=J.P.H." class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/A menina Índigo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">A menina Índigo</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=QCNJsWWKLJ4&ab_channel=AEEAKAssocia%C3%A7%C3%A3odeEstudosEspiritasAllanKardec" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Códigos mortais.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Códigos mortais</h5>
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=g9lKYPpsh4c&ab_channel=AcervodeFilmes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardflix" style="width: 18rem;">
+            <img src="~/Img/Mr Bean e o teste de matemática.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center; color:white">Mr Bean e o teste de matemática</h5>
+
+                <div style="margin-top:10px; display: flex; justify-content: center">
+                    <a href="https://www.youtube.com/watch?v=JNqRzOfm1Lc&ab_channel=Filmes%26Maquetes" class="buttonflix">Assistir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
