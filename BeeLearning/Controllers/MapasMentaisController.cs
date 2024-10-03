@@ -10,22 +10,22 @@ using BeeLearning.Models;
 
 namespace BeeLearning.Controllers
 {
-    public class RedacoesController : Controller
+    public class MapasMentaisController : Controller
     {
         private readonly BeeLearningContext _context;
 
-        public RedacoesController(BeeLearningContext context)
+        public MapasMentaisController(BeeLearningContext context)
         {
             _context = context;
         }
 
-        // GET: Redacoes
+        // GET: MapasMentais
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Redacao.ToListAsync());
+            return View(await _context.MapaMental.ToListAsync());
         }
 
-        // GET: Redacoes/Details/5
+        // GET: MapasMentais/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -33,40 +33,40 @@ namespace BeeLearning.Controllers
                 return NotFound();
             }
 
-            var redacao = await _context.Redacao
+            var mapaMental = await _context.MapaMental
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (redacao == null)
+            if (mapaMental == null)
             {
                 return NotFound();
             }
 
-            return View(redacao);
+            return View(mapaMental);
         }
 
-        // GET: Redacoes/Create
+        // GET: MapasMentais/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Redacoes/Create
+        // POST: MapasMentais/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Titulo,Nome")] Redacao redacao)
+        public async Task<IActionResult> Create([Bind("Id,Titulo,Img")] MapaMental mapaMental)
         {
             if (ModelState.IsValid)
             {
-                redacao.Id = Guid.NewGuid();
-                _context.Add(redacao);
+                mapaMental.Id = Guid.NewGuid();
+                _context.Add(mapaMental);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(redacao);
+            return View(mapaMental);
         }
 
-        // GET: Redacoes/Edit/5
+        // GET: MapasMentais/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -74,22 +74,22 @@ namespace BeeLearning.Controllers
                 return NotFound();
             }
 
-            var redacao = await _context.Redacao.FindAsync(id);
-            if (redacao == null)
+            var mapaMental = await _context.MapaMental.FindAsync(id);
+            if (mapaMental == null)
             {
                 return NotFound();
             }
-            return View(redacao);
+            return View(mapaMental);
         }
 
-        // POST: Redacoes/Edit/5
+        // POST: MapasMentais/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Titulo,Nome")] Redacao redacao)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Titulo,Img")] MapaMental mapaMental)
         {
-            if (id != redacao.Id)
+            if (id != mapaMental.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace BeeLearning.Controllers
             {
                 try
                 {
-                    _context.Update(redacao);
+                    _context.Update(mapaMental);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RedacaoExists(redacao.Id))
+                    if (!MapaMentalExists(mapaMental.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +114,10 @@ namespace BeeLearning.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(redacao);
+            return View(mapaMental);
         }
 
-        // GET: Redacoes/Delete/5
+        // GET: MapasMentais/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -125,42 +125,41 @@ namespace BeeLearning.Controllers
                 return NotFound();
             }
 
-            var redacao = await _context.Redacao
+            var mapaMental = await _context.MapaMental
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (redacao == null)
+            if (mapaMental == null)
             {
                 return NotFound();
             }
 
-            return View(redacao);
+            return View(mapaMental);
         }
 
-        // POST: Redacoes/Delete/5
+        // POST: MapasMentais/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var redacao = await _context.Redacao.FindAsync(id);
-            if (redacao != null)
+            var mapaMental = await _context.MapaMental.FindAsync(id);
+            if (mapaMental != null)
             {
-                _context.Redacao.Remove(redacao);
+                _context.MapaMental.Remove(mapaMental);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RedacaoExists(Guid id)
+        private bool MapaMentalExists(Guid id)
         {
-            return _context.Redacao.Any(e => e.Id == id);
+            return _context.MapaMental.Any(e => e.Id == id);
         }
-   
 
-    /**************Redação**************/
-    public IActionResult Redacao()
-    {
-        return View();
-    }
 
+        /**************MapaMental**************/
+        public IActionResult Mapamental()
+        {
+            return View();
+        }
     }
 }

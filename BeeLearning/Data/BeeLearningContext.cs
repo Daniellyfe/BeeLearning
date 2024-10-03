@@ -33,6 +33,7 @@ namespace BeeLearning.Data
         }
         public DbSet<BeeLearning.Models.Beeflixmodel> Beeflixmodel { get; set; } = default!;
         public DbSet<BeeLearning.Models.Redacao> Redacao { get; set; } = default!;
+        public DbSet<BeeLearning.Models.MapaMental> MapaMental { get; set; } = default!;
 
     }
 }
