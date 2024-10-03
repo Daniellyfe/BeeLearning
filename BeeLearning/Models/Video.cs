@@ -7,5 +7,7 @@
         public string Descricao { get; set; }
         public string Url { get; set; }
         public Guid IdMateria { get; set; }
+        public Materia MateriaVideo { get; set; }
+
     }
 }

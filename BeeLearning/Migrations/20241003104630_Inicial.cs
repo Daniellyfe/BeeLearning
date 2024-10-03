@@ -3,31 +3,32 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BeeLearning.Data.Migrations
+namespace BeeLearning.Migrations
 {
     /// <inheritdoc />
-    public partial class AdicionarModels1 : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Alunos",
+                name: "tbAlunos",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cpf = table.Column<int>(type: "int", nullable: false),
+                    Cpf = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Rg = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataNascimento = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Alunos", x => x.Id);
+                    table.PrimaryKey("PK_tbAlunos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Artigos",
+                name: "tbArtigos",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -37,11 +38,11 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Artigos", x => x.Id);
+                    table.PrimaryKey("PK_tbArtigos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArtigosAlunos",
+                name: "tbArtigosAluno",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -50,11 +51,11 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArtigosAlunos", x => x.Id);
+                    table.PrimaryKey("PK_tbArtigosAluno", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categorias",
+                name: "tbCategorias",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -62,11 +63,11 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categorias", x => x.Id);
+                    table.PrimaryKey("PK_tbCategorias", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoriasVideos",
+                name: "tbCategoriasVideo",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -75,11 +76,11 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoriasVideos", x => x.Id);
+                    table.PrimaryKey("PK_tbCategoriasVideo", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Materias",
+                name: "tbMaterias",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -87,26 +88,11 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Materias", x => x.Id);
+                    table.PrimaryKey("PK_tbMaterias", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Videos",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdMateria = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Videos", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "VideosAlunos",
+                name: "tbVideosAluno",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -115,36 +101,63 @@ namespace BeeLearning.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VideosAlunos", x => x.Id);
+                    table.PrimaryKey("PK_tbVideosAluno", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "tbVideos",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdMateria = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MateriaVideoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tbVideos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_tbVideos_tbMaterias_MateriaVideoId",
+                        column: x => x.MateriaVideoId,
+                        principalTable: "tbMaterias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tbVideos_MateriaVideoId",
+                table: "tbVideos",
+                column: "MateriaVideoId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Alunos");
+                name: "tbAlunos");
 
             migrationBuilder.DropTable(
-                name: "Artigos");
+                name: "tbArtigos");
 
             migrationBuilder.DropTable(
-                name: "ArtigosAlunos");
+                name: "tbArtigosAluno");
 
             migrationBuilder.DropTable(
-                name: "Categorias");
+                name: "tbCategorias");
 
             migrationBuilder.DropTable(
-                name: "CategoriasVideos");
+                name: "tbCategoriasVideo");
 
             migrationBuilder.DropTable(
-                name: "Materias");
+                name: "tbVideos");
 
             migrationBuilder.DropTable(
-                name: "Videos");
+                name: "tbVideosAluno");
 
             migrationBuilder.DropTable(
-                name: "VideosAlunos");
+                name: "tbMaterias");
         }
     }
 }

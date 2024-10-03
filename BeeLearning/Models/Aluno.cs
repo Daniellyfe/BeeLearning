@@ -1,4 +1,6 @@
-﻿namespace BeeLearning.Models
+﻿using System.ComponentModel;
+
+namespace BeeLearning.Models
 {
     public class Aluno
     {
