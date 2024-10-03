@@ -8,6 +8,31 @@ html {
     }
 }
 
+
+
+/***TESTE****/
+
+/* Altera a cor de fundo dos itens da navbar quando ativos ou focados */
+.navbar-nav .dropdown-item.active,
+.navbar-nav .dropdown-item:focus {
+    background-color: transparent; /* Remove a cor de fundo ao passar o mouse */
+    color: black; /* Cor do texto */
+}
+
+/* Altera a cor ao passar o mouse */
+.navbar-nav .dropdown-item:hover {
+    background-color: transparent; /* Remove a cor de fundo ao passar o mouse */
+    color: black; /* Cor do texto ao passar o mouse */
+}
+
+
+
+/**************/
+
+
+
+
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -17,6 +42,13 @@ body.Beeflix {
     height: 100%;
     background-color: black; /* Cor desejada */
 }
+body.BEEREDACAO {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f6ebd2; /* Cor desejada */
+}
+
 
 html {
    
@@ -36,11 +68,9 @@ body {
 }
 
 .containernav {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 10vh; /* Faz com que a altura do container ocupe toda a tela */
+   
 }
 .li{
 
@@ -88,7 +118,7 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-
+/***************************************************/
 
 /*CARROCEL*/
 
@@ -124,7 +154,7 @@ body {
 
 
 
-
+/***************************************************/
 
 /*ESTUDANTES*/
 .imagem-container2 {
@@ -144,6 +174,8 @@ body {
        
     }
 
+/***************************************************/
+
 
 /*FOTOS3*/
 .imagem-container4 {
@@ -152,6 +184,11 @@ body {
     margin-top: 200px;
     gap: 100px;
 }
+/***************************************************/
+
+
+
+
 
 /*PortuguesMatérias*/
 
@@ -161,7 +198,7 @@ body {
     align-items: center; /* Alinha verticalmente no centro */
     width: 100%; /* Garante que a div ocupe toda a largura */
 }
-
+/***************************************************/
 
 
 
@@ -234,13 +271,6 @@ div.titleflix {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
 iframe{
     width: 98%;
     height: 500px;
@@ -257,24 +287,19 @@ iframe{
 
 
 
-
-
-
-
-
 /********************BOTÃO PESQUISAR************************/
 
 .search-container {
     text-align: center; /* Centraliza a barra de pesquisa */
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .search-input {
     justify-content:center;
     background-color: white;
     padding: 10px; /* Espaçamento interno */
-    width: 300px; /* Largura da barra de pesquisa */
-    border: 2px solid #FFBA00; /* Cor da borda */
+    width: 600px; /* Largura da barra de pesquisa */
+    border: 5px solid #FFBA00; /* Cor da borda */
     border-radius: 5px; /* Borda arredondada */
     font-size: 16px; /* Tamanho da fonte */
 }
@@ -288,6 +313,84 @@ iframe{
     font-size: 16px; /* Tamanho da fonte do botão */
     margin-left: 5px; /* Espaço entre a barra de pesquisa e o botão */
 }
+
+/**************************************************************/
+
+
+
+
+
+
+
+
+/*********************REDAÇÃO***********************/
+
+/*BOTÃO ACORDEÃO DA REDAÇÃO*/
+.wrapper {
+    background-color: #e8d298b8; /* Cor rosa */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin: 90px;/* Margem externa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+/*********************************************/
+
+/*BOTÃO SELECIONAR DA REDAÇÃO*/
+.selectredacao {
+    display: flex;
+    justify-content: center; /* Centraliza o select */
+    margin: 200px; /* Margem para evitar que fique colado nas bordas */
+    background-color: #e8d298b8;
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 25px; /* Espaçamento interno */
+    box-shadow: 0px 6px 5px #2e2d2d; /* Sombra opcional */
+    margin-top: 40px;
+}
+
+/*********************************************/
+
+
+
+/*********************REDAÇÃO***********************/
+.containerredacao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1200px; /* largura desejada */
+    margin: 20px auto; /* centralizar na página */
+    
+}
+
+#redacao {
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+#avaliarBtn {
+    border: 3px solid #d4953b;
+    background-color: #ffba00;
+    color: azure;
+    border-radius: 15px;
+    padding: 10px 20px; /* aumentar o tamanho do botão */
+    font-size: 16px; /* aumentar a fonte do botão */
+    margin-right: 10px; /* espaço entre o botão e o resultado */
+    margin-bottom: 20px;
+}
+
+#resultado {
+    font-weight: 600;
+    font-size: 20px;
+    display: inline-block; /* faz com que o resultado fique ao lado do botão */
+    vertical-align: top; /* alinha o resultado ao topo do botão */
+}
+
+
+
+/*********************************************/
+
+
+
 
 
 

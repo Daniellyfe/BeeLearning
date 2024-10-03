@@ -1,13 +1,102 @@
-﻿<select class="form-select form-select-lg mb-3" aria-label="Large select example">
-    <option selected>Escolha o Tema</option>
-    <option value="1">O impacto das redes sociais na construção da identidade juvenil</option>
-    <option value="2">Desigualdade social e suas consequências na educação</option>
-    <option value="3">A importância da preservação ambiental para as futuras gerações</option>
-    <option value="4">A influência da cultura de massa na formação de valores sociais</option>
-    <option value="5">O papel da saúde mental na vida dos jovens</option>
-    <option value="6">Desafios e oportunidades da inclusão digital no Brasil</option>
-    <option value="7">O papel da literatura na formação do cidadão crítico</option>
-    <option value="8">A relação entre tradição e modernidade na sociedade contemporânea</option>
-    <option value="9">Mobilidade urbana e seus impactos na qualidade de vida</option>
-    <option value="10">O papel da família na formação dos valores éticos e morais</option>
-</select>
+﻿@{
+    ViewData["Title"] = "Beeflix";
+}
+<body class="BEEREDACAO" style=" margin-bottom: 150px;">
+
+
+
+
+    <h1 style="color:#FFBA00;text-align:center; font-weight:600; text-align:center; margin-top: 150px; font-size: 70px;">REDAÇÃO</h1>
+
+
+
+    <div class="wrapper">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" style="background-color:#fff9e9; margin-top:5px;">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" style="background-color: #feffe1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+            </div>
+            <div class="accordion-item" style="background-color:#fff9e9; margin-top:5px;">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" style="background-color: #feffe1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                </div>
+            </div>
+            <div class="accordion-item" style="background-color:#fff9e9; margin-top:5px;">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" style="background-color: #feffe1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @***************************************************************************************************@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*********************************SELECT REDAÇÃO******************************************@
+
+
+    <div class="selectredacao">
+        <select class="form-select form-select-lg mb-3" style="justify-content:center; background-color:#fff9e9;" aria-label="Large select example">
+            <option selected>Escolha o Tema</option>
+            <option value="1">O impacto das redes sociais na construção da identidade juvenil</option>
+            <option value="2">Desigualdade social e suas consequências na educação</option>
+            <option value="3">A importância da preservação ambiental para as futuras gerações</option>
+            <option value="4">A influência da cultura de massa na formação de valores sociais</option>
+            <option value="5">O papel da saúde mental na vida dos jovens</option>
+            <option value="6">Desafios e oportunidades da inclusão digital no Brasil</option>
+            <option value="7">O papel da literatura na formação do cidadão crítico</option>
+            <option value="8">A relação entre tradição e modernidade na sociedade contemporânea</option>
+            <option value="9">Mobilidade urbana e seus impactos na qualidade de vida</option>
+            <option value="10">O papel da família na formação dos valores éticos e morais</option>
+        </select>
+    </div>
+
+
+
+
+    @***************************************************************************************************@
+
+
+
+    @* ************************************* *@
+    @* TESTE *@
+    <div class="containerredacao">
+        <h1 style="color:#FFBA00;text-align:center; font-weight:600; text-align:center; font-size: 70px;">Avaliação de Redação</h1>
+        <textarea id="redacao" placeholder="Digite sua redação aqui..." rows="10"></textarea>
+        <div>
+            <button id="avaliarBtn">Avaliar Redação</button>
+            <div id="resultado"></div>
+        </div>
+    </div>
+    @* ************************************* *@
+
+</body>

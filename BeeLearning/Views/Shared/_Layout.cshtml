@@ -11,46 +11,7 @@
 </head>
 <body>
     <header>
-        @*
-       <nav>
-            <div class="btn-group">
-
-                <div class="container1">
-                    <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-list" style="; color:#fccd35"></i>
-                    </button>
-
-
-                    <div class="imagemlogo align-content-end align-items-end">
-                        <img src="~/Img/bee.png" alt="..." Width="50" Height="50">
-                        <h1 style="color:#fccd35">Beelearning</h1>
-                    </div>
-
-
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Quem">QuemSomos</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Beeflix">Beeflix</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-
-                </div>
-        </nav>
-
-        *@
-
-
-
-          <!--comeca aqui-->
+         @*  <!--comeca aqui--> *@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color: white;">
             <div class="container-fluid">
                 <img src="~/Img/bee.png" alt="..." Width="50" Height="50">
@@ -81,7 +42,7 @@
                 </div>
             </div>
         </nav>
-        <!--termina aqui -->
+        @* <!--termina aqui --> *@
 
 
     </header>
@@ -100,6 +61,7 @@
             &copy; 2024 - BeeLearning - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
