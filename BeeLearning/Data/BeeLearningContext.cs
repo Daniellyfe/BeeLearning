@@ -31,6 +31,8 @@ namespace BeeLearning.Data
             modelBuilder.Entity<Materia>().ToTable("tbMaterias");          
             
         }
+        public DbSet<BeeLearning.Models.Beeflixmodel> Beeflixmodel { get; set; } = default!;
+        public DbSet<BeeLearning.Models.Redacao> Redacao { get; set; } = default!;
 
     }
 }
