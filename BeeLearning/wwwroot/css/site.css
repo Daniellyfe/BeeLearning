@@ -42,7 +42,9 @@ body {
     align-items: center;
     height: 10vh; /* Faz com que a altura do container ocupe toda a tela */
 }
+.li{
 
+}
 
 
 
@@ -233,6 +235,19 @@ div.titleflix {
 }
 
 
+
+
+
+
+
+
+iframe{
+    width: 98%;
+    height: 500px;
+    display:flex;
+    align-items:center;
+    padding-left: 20px;
+}
 
 
 
