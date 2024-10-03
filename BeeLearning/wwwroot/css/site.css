@@ -292,4 +292,14 @@ iframe{
 
 
 
+/*************************MAPA MENTAL******************************/
 
+.cardmapa {
+    width: 230px;
+    height: 280px;
+}
+
+.mapas {
+    width: 200px;
+    height: 220px;
+}
