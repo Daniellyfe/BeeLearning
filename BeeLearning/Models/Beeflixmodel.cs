@@ -1,8 +1,8 @@
 ﻿namespace BeeLearning.Models
 {
-    public class Materia
+    public class Beeflixmodel
     {
         public Guid Id { get; set; }
-        public string Nome { get; set; }
+        public string Titulo { get; set; }
     }
 }

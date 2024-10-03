@@ -16,6 +16,11 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\QuemSomosController.cs" />
+    <Compile Remove="Models\Pesquisa.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Materias\Historias.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
