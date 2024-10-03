@@ -154,5 +154,11 @@ namespace BeeLearning.Controllers
         {
             return _context.Beeflixmodel.Any(e => e.Id == id);
         }
+
+
+
+
+
+
     }
 }
