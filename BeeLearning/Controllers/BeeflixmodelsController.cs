@@ -157,7 +157,10 @@ namespace BeeLearning.Controllers
 
 
 
-
+        public IActionResult Beeflix()
+        {
+            return View();
+        }
 
 
     }
