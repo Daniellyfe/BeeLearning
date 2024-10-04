@@ -318,6 +318,17 @@ iframe{
 
 
 /*********************REDAÇÃO***********************/
+/*body*/
+
+    
+
+
+
+
+
+
+
+
 
 /*BOTÃO ACORDEÃO DA REDAÇÃO*/
 .wrapper {
@@ -343,6 +354,11 @@ iframe{
 
 
 body.BEEREDACAO {
+    margin-bottom: 150px;
+    background-image: url('../img/mel img.jpg'); /* Substitua pela URL da sua imagem */
+    background-size: cover; /* Para cobrir toda a área da tela */
+    background-position: center; /* Para centralizar a imagem */
+    color: #ffffff; /* Cor padrão do texto para melhor visibilidade */
     margin: 0;
     padding: 0;
     height: 100%;

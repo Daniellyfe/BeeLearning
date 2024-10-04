@@ -3,6 +3,17 @@
 }
 @* //////////////// Inicio Home ///////////////// *@
 <div>
+    @{
+        if (!User.Identity.IsAuthenticated)
+        {
+            @*////////////////// Logo em baixo das materias /////////////////////*@
+            <div class="alinhahome2">
+                <img src="Img/BEE3 - Copia.png" class="alinhahome2" alt="..." style="width: 100%">
+                <img src="Img/abelha de borda.jpg" class="alinhahome2" alt="..." style="width: 100%; height: 50px;">
+            </div>
+           
+        }
+    }
     <div class="alinhahome1 btn-group">
         <img class="imgbelha" src="~/Img/bee1.png" style="margin-left: 100px;" alt="..." Width="400" Height="400">
 
@@ -11,116 +22,127 @@
             <h1 class="teste1" style="text-align:center; font-weight:2; margin-top: 10px; margin-bottom: 10px;">O jeito mais facil de você conseguir alcançar seus objetivos</h1>
             <div class="embaixo2">
 
-                @* <button type="button" style="color:white; width:200px" class="btn btn-warning">ENTRAR AQUI</button> *@
-                <a style="color:white; width:200px; background-color:#F1B408" class="btn" asp-area="Identity" asp-page="/Account/Register">Cadastrar</a>
-                @* <button type="button" style="color:black; width:200px; background-color:#E6E6E6" class="btn">CADASTRAR</button> *@
-                <a style="color:black; width:200px; background-color:#E6E6E6" class="btn" asp-area="Identity" asp-page="/Account/Login">Entrar</a>
+
+
+                @{
+                    if (!User.Identity.IsAuthenticated)
+                    {
+                        @* <button type="button" style="color:white; width:200px" class="btn btn-warning">ENTRAR AQUI</button> *@
+                        <a style="color:white; width:200px; background-color:#F1B408" class="btn" asp-area="Identity" asp-page="/Account/Register">Cadastrar</a>
+                        @* <button type="button" style="color:black; width:200px; background-color:#E6E6E6" class="btn">CADASTRAR</button> *@
+                        <a style="color:black; width:200px; background-color:#E6E6E6" class="btn" asp-area="Identity" asp-page="/Account/Login">Entrar</a>
+
+                    }
+                }
 
 
             </div>
         </div>
     </div>
 
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            @* /////////////////Botões das matérias///////////////// *@
+            <div class="linha"></div>
+            <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;" class="btn btn-group">
 
-
-    @* /////////////////Botões das matérias///////////////// *@
-        <div class="linha"></div>
-        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;" class="btn btn-group">
-
-
-            <div style="text-align: center;">
 
                 <div style="text-align: center;">
-                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Linguagens">
-                        <img src="~/Img/linguaestranheira.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                        <p>Inglês</p>
+
+                    <div style="text-align: center;">
+                        <a class="btn" asp-area="" asp-controller="Materias" asp-action="Linguagens">
+                            <img src="~/Img/linguaestranheira.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                            <p>Inglês</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Portugues">
+                        <img src="~/Img/portugues.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Português</p>
                     </a>
                 </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Fisica">
+                        <img src="~/Img/fisica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Física</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Quimica">
+                        <img src="~/Img/quimica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Química</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Matematica">
+                        <img src="~/Img/matematica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Matemática</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Historia">
+                        <img src="~/Img/historia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>História</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Geografia">
+                        <img src="~/Img/geografia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Geografia</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Biologia">
+                        <img src="~/Img/biologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Biologia</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Tecnologia">
+                        <img src="~/Img/tecnologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Tecnologia</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Sociologia">
+                        <img src="~/Img/sociologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Sociologia</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a class="btn" asp-area="" asp-controller="Materias" asp-action="Filosofia">
+                        <img src="~/Img/filosofia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
+                        <p>Filosofia</p>
+                    </a>
+                </div>
+
             </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Portugues">
-                    <img src="~/Img/portugues.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Português</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Fisica">
-                    <img src="~/Img/fisica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Física</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Quimica">
-                    <img src="~/Img/quimica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Química</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Matematica">
-                    <img src="~/Img/matematica.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Matemática</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Historia">
-                    <img src="~/Img/historia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>História</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Geografia">
-                    <img src="~/Img/geografia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Geografia</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Biologia">
-                    <img src="~/Img/biologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Biologia</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Tecnologia">
-                    <img src="~/Img/tecnologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Tecnologia</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Sociologia">
-                    <img src="~/Img/sociologia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Sociologia</p>
-                </a>
-            </div>
-
-            <div style="text-align: center;">
-            <a class="btn" asp-area="" asp-controller="Materias" asp-action="Filosofia">
-                    <img src="~/Img/filosofia.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                    <p>Filosofia</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="linha"></div>
+            <div class="linha"></div>
+        } }
 
 
 
-
-
-        @*////////////////// Logo em baixo das materias /////////////////////*@
-        <div class="alinhahome2">
-            <img src="Img/BEE3 - Copia.png" class="alinhahome2" alt="..." style="width: 100%">
+            @{
+        if (User.Identity.IsAuthenticated)
+        {
+    @*////////////////// Logo em baixo das materias /////////////////////*@
+    <div class="alinhahome2">
+        <img src="Img/BEE3 - Copia.png" class="alinhahome2" alt="..." style="width: 100%">
     </div>
+        }}
 
-    
     @* //////TEXTO AO LADO/////// *@
 
 
@@ -266,38 +288,44 @@
 
         </div>
     </div>
-</div>
 
-
-<div id="texto-lado" style="margin-top: 120px; ">
-    <h1 class="" style="font-weight:2; font-weight:400; text-align:center; margin:200px 300px 0px 300px">APROVAÇÕES NAS MELHORES UNIVERSIDADES PELA BEELEARNING</h1>
-</div>
-
-
-@* /////ESTUDANTES///// *@
-
-<div class="imagem-container2">
-    <div class="item">
-    <img src="~/Img/direito.png" class="d-block w-100" alt="Imagem1">
-        <h4 style="text-align:center">DIREITO NA USP</h4>
-        <h6 style="color:#FFBA00; text-align:center; margin-top: 15px;">FABRICIO RIBEIRO</h6>
+    <div id="texto-lado" style="margin-top: 120px; ">
+        <h1 class="" style="font-weight:2; font-weight:400; text-align:center; margin:200px 300px 0px 300px">APROVAÇÕES NAS MELHORES UNIVERSIDADES PELA BEELEARNING</h1>
     </div>
-    <div class="item">
-    <img src="~/Img/medicina na unicamp.png" class="d-block w-100" alt="Imagem1">
-        <h4 style="text-align:center">MEDICINA NA UNICAMP</h4>
-        <h6 style="color:#FFBA00; text-align:center; margin-top: 15px">HANNA YOSHIKA</h6>
+
+
+    @* /////ESTUDANTES///// *@
+
+    <div class="imagem-container2">
+        <div class="item">
+            <img src="~/Img/direito.png" class="d-block w-100" alt="Imagem1">
+            <h4 style="text-align:center">DIREITO NA USP</h4>
+            <h6 style="color:#FFBA00; text-align:center; margin-top: 15px;">FABRICIO RIBEIRO</h6>
+        </div>
+        <div class="item">
+            <img src="~/Img/medicina na unicamp.png" class="d-block w-100" alt="Imagem1">
+            <h4 style="text-align:center">MEDICINA NA UNICAMP</h4>
+            <h6 style="color:#FFBA00; text-align:center; margin-top: 15px">HANNA YOSHIKA</h6>
+        </div>
+        <div class="item">
+            <img src="~/Img/medicina na usp.png" class="d-block w-100" alt="Imagem1">
+            <h4 style="text-align:center">MEDICINA NA USP</h4>
+            <h6 style="color:#FFBA00; text-align:center; margin-top: 15px;">PEDRO ANDRÉ DE SOUZA</h6>
+        </div>
     </div>
-    <div class="item">
-    <img src="~/Img/medicina na usp.png" class="d-block w-100" alt="Imagem1">
-        <h4 style="text-align:center">MEDICINA NA USP</h4>
-        <h6 style="color:#FFBA00; text-align:center; margin-top: 15px;">PEDRO ANDRÉ DE SOUZA</h6>
-    </div>
-</div>
 
 
-@*////////////////// LOGO FINAL /////////////////////*@
-<div class="alinhahome4" style="margin-top: 300px; width: 100%">
-    <a style="color:white; width:200px margim-bottom:10px; position:absolute; bottom: 600px;left: 45%; background-color:#FFDF6C; width:200px; height:40px;" class="btn" asp-area="Identity" asp-page="/Account/Register">COMEÇE AGORA</a>
-    <img src="Img/HOMEFINAL.png" class="alinhahome4" alt="..." style="width: 100%">
 
+    @{
+        if (!User.Identity.IsAuthenticated)
+        {
+
+            @*////////////////// LOGO FINAL /////////////////////*@
+            <div class="alinhahome4" style="margin-top: 300px; width: 100%">
+                <a style="color:white; width:200px margim-bottom:10px; position:absolute; bottom: 600px;left: 45%; background-color:#FFDF6C; width:200px; height:40px;" class="btn" asp-area="Identity" asp-page="/Account/Register">COMEÇE AGORA</a>
+                <img src="Img/HOMEFINAL.png" class="alinhahome4" alt="..." style="width: 100%">
+
+            </div>
+        }
+    }
 </div>

@@ -28,16 +28,20 @@
                         <li>
                             <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="Quem">QuemSomos</a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Beeflixmodels" asp-action="Beeflix">Beeflix</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Redacoes" asp-action="Redacao">Redações</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="MapasMentais" asp-action="Mapamental">Mapas Mentais</a>
-                        </li>
-                    </ul>
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Beeflixmodels" asp-action="Beeflix">Beeflix</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Redacoes" asp-action="Redacao">Redações</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="MapasMentais" asp-action="Mapamental">Mapas Mentais</a>
+                                </li>
+                            }}
+                            </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
