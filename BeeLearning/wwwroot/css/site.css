@@ -42,12 +42,6 @@ body.Beeflix {
     height: 100%;
     background-color: black; /* Cor desejada */
 }
-body.BEEREDACAO {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #f6ebd2; /* Cor desejada */
-}
 
 
 html {
@@ -66,17 +60,17 @@ body {
     align-items: center;
     height: 10vh; /* Faz com que a altura do container ocupe toda a tela */
 }
-
+/*****************************FOOTER***********************************/
 .containernav {
+    z-index: 1;
+    color: white;
+    text-align: center;
     display: flex;
     justify-content: center;
-   
-}
-.li{
-
+    align-items: center;
 }
 
-
+/****************************************************************/
 
 
 
@@ -327,10 +321,10 @@ iframe{
 
 /*BOTÃO ACORDEÃO DA REDAÇÃO*/
 .wrapper {
-    background-color: #e8d298b8; /* Cor rosa */
+    background-color: #ffc30075;
     border-radius: 15px; /* Bordas arredondadas */
     padding: 20px; /* Espaçamento interno */
-    margin: 90px;/* Margem externa */
+    margin: 90px; /* Margem externa */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 /*********************************************/
@@ -340,18 +334,23 @@ iframe{
     display: flex;
     justify-content: center; /* Centraliza o select */
     margin: 200px; /* Margem para evitar que fique colado nas bordas */
-    background-color: #e8d298b8;
+    background-color: #ffc30075;
     border-radius: 15px; /* Bordas arredondadas */
     padding: 25px; /* Espaçamento interno */
     box-shadow: 0px 6px 5px #2e2d2d; /* Sombra opcional */
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
-/*********************************************/
+
+body.BEEREDACAO {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #fff4d4; /* Cor desejada */
+}
 
 
 
-/*********************REDAÇÃO***********************/
 .containerredacao {
     display: flex;
     flex-direction: column;
@@ -379,13 +378,16 @@ iframe{
 }
 
 #resultado {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 20px;
     display: inline-block; /* faz com que o resultado fique ao lado do botão */
     vertical-align: top; /* alinha o resultado ao topo do botão */
 }
 
-
+#erroTema {
+    color: red;
+    font-size: 16px;
+}
 
 /*********************************************/
 
@@ -432,3 +434,14 @@ iframe{
 
 
 
+.bodymapa {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o footer fique no fundo */
+    margin: 0;
+}
+
+
+
+
+/**********************************************************************************/
