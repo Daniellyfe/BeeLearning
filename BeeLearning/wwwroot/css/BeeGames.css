@@ -1,0 +1,28 @@
+
+/******************************************JOGOS********************************************/
+
+
+@font-face {
+    font-family:"Super Mario World";
+    src: url(/Img/mario/SuperMarioWorld.ttf);
+}
+
+* {
+    margin: 0;
+}
+
+
+
+#cenario {
+    position: relative;
+    width:100vh;
+    height: 100vh;
+    background-image: url(/Img/mario/cenario.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+
+
+/*******************************************************************************************/

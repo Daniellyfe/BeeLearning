@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Materias\Historias.cshtml" />
+    <Content Remove="wwwroot\css\BeeGames.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +34,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
   </ItemGroup>
 
 </Project>

@@ -36,12 +36,7 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-body.Beeflix {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: black; /* Cor desejada */
-}
+
 
 
 html {
@@ -224,6 +219,15 @@ body {
 
 /*BEEFLIX*/
 
+
+.Beeflix {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black; /* Cor desejada */
+}
+
+
 .alinhaflix2 {
     display: flex;
     flex-wrap: wrap;
@@ -353,7 +357,7 @@ iframe{
 }
 
 
-body.BEEREDACAO {
+.BEEREDACAO {
     margin-bottom: 150px;
     background-image: url('../img/mel img.jpg'); /* Substitua pela URL da sua imagem */
     background-size: cover; /* Para cobrir toda a área da tela */
@@ -450,7 +454,7 @@ body.BEEREDACAO {
 
 
 
-.bodymapa {
+.mapa {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Garante que o footer fique no fundo */
@@ -461,3 +465,126 @@ body.BEEREDACAO {
 
 
 /**********************************************************************************/
+
+/***********************************MATÉRIAS***************************************/
+
+/**********************************************************************************/
+.materia {
+    display:flex;
+    height: 100%;
+}
+
+
+/**************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+/******************************************JOGOS********************************************/
+
+
+@font-face {
+    font-family:"Super Mario World";
+    src: url(/Img/mario/SuperMarioWorld.ttf);
+}
+
+
+#cenario {
+    position: relative;
+    width:208vh;
+    height: 100vh;
+    background-image: url(/Img/mario/cenario.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+
+#ceu {
+    position: absolute;
+    width: 208vh;
+    height: 100vh;
+    background-image: url(/Img/mario/cenarioceu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+#personagem {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(/Img/mario/marioParadoLadoDireito.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    bottom: 70px;
+    left: 0;
+}
+#inimigo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(/Img/mario/inimigoLadoEsquerdo.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    bottom: 70px;
+    right: 0;
+}
+#menudojogo {
+    position: absolute;
+    width: 1000px;
+    height: 150px;
+    background-image: url(/Img/mario/menuDoJogo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#tempo {
+    position: absolute;
+    top: 92px;
+    right: 600px;
+    color: #ffdf73;
+    right: 600px;
+}
+
+vidas {
+    position: absolute;
+    top: 102px;
+    left: 300px;
+    color: white;
+}
+
+
+moedas {
+    position: absolute;
+    top: 70px;
+    left: 250px;
+    color: white;
+}
+
+moedas {
+    position: absolute;
+    top: 100px;
+    right: 250px;
+    color: white;
+}
+
+/*******************************************************************************************/

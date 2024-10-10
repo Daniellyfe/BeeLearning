@@ -22,7 +22,7 @@ namespace BeeLearning.Controllers
             return View();
         }
 
-        public IActionResult Beeflix()
+        public IActionResult BeeGames()
         {
             return View();
         }

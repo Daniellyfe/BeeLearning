@@ -182,7 +182,7 @@ function avaliarRedacao() {
     }
 
     // Exibir resultados
-    resultadoDiv.textContent = `Pontuação: ${pontuacao}`;
+    resultadoDiv.textContent = `Nota: ${pontuacao}`;
     feedbackDiv.textContent = feedback;
 }
 
