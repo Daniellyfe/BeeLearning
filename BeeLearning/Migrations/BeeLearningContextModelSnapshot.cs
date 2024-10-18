@@ -17,7 +17,7 @@ namespace BeeLearning.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -91,6 +91,29 @@ namespace BeeLearning.Migrations
                     b.ToTable("tbArtigosAluno", (string)null);
                 });
 
+            modelBuilder.Entity("BeeLearning.Models.BeeGames", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Jogos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BeeGames");
+                });
+
             modelBuilder.Entity("BeeLearning.Models.Beeflixmodel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -136,6 +159,25 @@ namespace BeeLearning.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tbCategoriasVideo", (string)null);
+                });
+
+            modelBuilder.Entity("BeeLearning.Models.MapaMental", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MapaMental");
                 });
 
             modelBuilder.Entity("BeeLearning.Models.Materia", b =>

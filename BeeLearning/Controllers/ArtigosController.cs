@@ -154,5 +154,10 @@ namespace BeeLearning.Controllers
         {
             return _context.Artigos.Any(e => e.Id == id);
         }
+
+        public IActionResult Vestibulares()
+        {
+            return View();
+        }
     }
 }

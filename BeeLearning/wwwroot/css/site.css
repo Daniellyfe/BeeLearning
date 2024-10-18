@@ -40,14 +40,11 @@ html {
 
 
 html {
-   
     position: relative;
     min-height: 100%;
 }
 
-body {
-    margin-bottom: 60px;
-}
+
 
 .container1 {
     display: flex;
@@ -66,9 +63,14 @@ body {
 }
 
 /****************************************************************/
+/**************************HOME**************************************/
 
-
-
+.homebeelearning {
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
 .imagemlogo {
     display: flex;
@@ -107,18 +109,18 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-/***************************************************/
 
-/*CARROCEL*/
+/************************CARROCEL HOME***************************/
 
 #carouselExample {
     width: 60%;
     margin: 0px auto;
-    margin-top:150px;
+    margin-top: 150px;
 }
-#carouselExample img {
-    height: 300px;
-}
+
+    #carouselExample img {
+        height: 300px;
+    }
 
 .organizadiv1 {
     padding-top: 120px;
@@ -143,10 +145,9 @@ body {
 
 
 
-/***************************************************/
-
-/*ESTUDANTES*/
+/*******************************ESTUDANTES HOME**********************************/
 .imagem-container2 {
+    margin-bottom: 90px;
     display: flex; /* Faz as imagens ficarem lado a lado */
     justify-content: center;
     margin-top: 200px;
@@ -156,17 +157,15 @@ body {
     .imagem-container2 img {
         width: 200px; /* Tamanho das imagens, você pode ajustar */
         margin-right: 10px; /* Espaço entre as imagens */
-
     }
+
     .imagem-container2 .item {
         text-align: center; /* Centraliza o texto dentro de cada contêiner */
-       
     }
 
-/***************************************************/
 
 
-/*FOTOS3*/
+/**********************************FOTOS3 HOME******************************/
 .imagem-container4 {
     display: flex; /* Faz as imagens ficarem lado a lado */
     justify-content: center;
@@ -179,7 +178,23 @@ body {
 
 
 
-/*PortuguesMatérias*/
+/*Matérias*/
+
+.text-container p {
+    margin: 0; /* Remove margens padrões */
+    padding: 0;
+}
+
+    .text-container p + p {
+        margin-top: 0px; /* Define um espaçamento entre os parágrafos */
+    }
+
+
+
+
+
+
+
 
 .alinhaportugues1 {
     display: flex;
@@ -187,7 +202,48 @@ body {
     align-items: center; /* Alinha verticalmente no centro */
     width: 100%; /* Garante que a div ocupe toda a largura */
 }
-/***************************************************/
+/*********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************************/
+/*********************************************************************/
+/**********************QUEM SOMOS*****************************/
+.alinhaquem1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.imagemquem {
+    display: flex; /* Faz as imagens ficarem lado a lado */
+    justify-content: center;
+    margin-top: 200px;
+    margin: 200px;
+    gap: 50px;
+    margin-bottom: 200px;
+}
+
+/*********************************************************************/
 
 
 
@@ -212,11 +268,8 @@ body {
 
 
 
-
-
-
-
-
+/****************************************************************/
+/****************************************************************/
 /*BEEFLIX*/
 
 
@@ -242,6 +295,14 @@ body {
     height: 200px;
 }
 
+.alinhaflix2 {
+    margin-top: 60px;
+}
+
+
+
+
+
 div.cardflix {
     margin: 20px;
     border-radius: 10px;
@@ -249,9 +310,9 @@ div.cardflix {
 }
 
 img.imgflix {
-    max-width: 100%; 
+    max-width: 100%;
     width: 300px;
-    height:auto;
+    height: auto;
 }
 
 div.titleflix {
@@ -269,22 +330,17 @@ div.titleflix {
     cursor: pointer;
 }
 
-iframe{
+iframe {
     width: 98%;
     height: 500px;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     padding-left: 20px;
 }
 
 
 
-
-
-
-
-
-
+/****************************BEEFLIX************************************/
 /********************BOTÃO PESQUISAR************************/
 
 .search-container {
@@ -293,7 +349,7 @@ iframe{
 }
 
 .search-input {
-    justify-content:center;
+    justify-content: center;
     background-color: white;
     padding: 10px; /* Espaçamento interno */
     width: 600px; /* Largura da barra de pesquisa */
@@ -321,15 +377,15 @@ iframe{
 
 
 
+
+
+
+
+
+
+/****************************************************************/
+/****************************************************************/
 /*********************REDAÇÃO***********************/
-/*body*/
-
-    
-
-
-
-
-
 
 
 
@@ -342,7 +398,6 @@ iframe{
     margin: 90px; /* Margem externa */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
-/*********************************************/
 
 /*BOTÃO SELECIONAR DA REDAÇÃO*/
 .selectredacao {
@@ -377,13 +432,11 @@ iframe{
     align-items: flex-start;
     width: 1200px; /* largura desejada */
     margin: 20px auto; /* centralizar na página */
-    
 }
 
 #redacao {
     width: 100%;
     margin-bottom: 10px;
-
 }
 
 #avaliarBtn {
@@ -417,12 +470,35 @@ iframe{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************************/
+/****************************************************************/
 /*************************MAPA MENTAL******************************/
+
+.linha1 {
+    background-color: black;
+    height: 0.5px;
+    width: 100%;
+    margin: 100px 0px 0px 0px;
+}
+
 
 .cardmapas {
     width: 280px;
     height: 320px;
-    margin:20px;
+    margin: 20px;
 }
 
 .mapas {
@@ -432,7 +508,7 @@ iframe{
 .alinhamapas.btn-group {
     width: 100%;
     margin-top: 10px;
-    justify-content:center;
+    justify-content: center;
 }
 
 .buttonmapas {
@@ -444,12 +520,27 @@ iframe{
     width: 150px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left:40px;
+    margin-left: 40px;
 }
 
-.textomapas{
-    margin-top:150px;
-    text-align:center;
+.textomapas {
+    font-size: 50px;
+    font-weight: 900;
+    color: #FFBA00;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.bodymapa {
+    margin-bottom: 150px;
+}
+
+
+.alinhamapa1 {
+    display: flex;
+    justify-content: space-between; /* Coloca a imagem à esquerda e o h1 à direita */
+    align-items: center; /* Alinha verticalmente no centro */
+    width: 100%; /* Garante que a div ocupe toda a largura */
 }
 
 
@@ -460,18 +551,36 @@ iframe{
     min-height: 100vh; /* Garante que o footer fique no fundo */
     margin: 0;
 }
+/**********************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 /**********************************************************************************/
-
+/**********************************************************************************/
 /***********************************MATÉRIAS***************************************/
-
-/**********************************************************************************/
 .materia {
-    display:flex;
+    display: flex;
     height: 100%;
+    margin-bottom: 200px;
+    margin-top: 100px;
 }
 
 
@@ -496,95 +605,22 @@ iframe{
 /******************************************JOGOS********************************************/
 
 
-@font-face {
-    font-family:"Super Mario World";
-    src: url(/Img/mario/SuperMarioWorld.ttf);
+.Beegamesbody {
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-
-#cenario {
-    position: relative;
-    width:208vh;
-    height: 100vh;
-    background-image: url(/Img/mario/cenario.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
+.gamesdiv1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 200px;
+    margin-bottom: 100px
 }
 
-
-#ceu {
-    position: absolute;
-    width: 208vh;
-    height: 100vh;
-    background-image: url(/Img/mario/cenarioceu.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-}
-
-#personagem {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-image: url(/Img/mario/marioParadoLadoDireito.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 0 0;
-    bottom: 70px;
-    left: 0;
-}
-#inimigo {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-image: url(/Img/mario/inimigoLadoEsquerdo.gif);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 0 0;
-    bottom: 70px;
-    right: 0;
-}
-#menudojogo {
-    position: absolute;
-    width: 1000px;
-    height: 150px;
-    background-image: url(/Img/mario/menuDoJogo.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 0 0;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-#tempo {
-    position: absolute;
-    top: 92px;
-    right: 600px;
-    color: #ffdf73;
-    right: 600px;
-}
-
-vidas {
-    position: absolute;
-    top: 102px;
-    left: 300px;
-    color: white;
-}
-
-
-moedas {
-    position: absolute;
-    top: 70px;
-    left: 250px;
-    color: white;
-}
-
-moedas {
-    position: absolute;
-    top: 100px;
-    right: 250px;
-    color: white;
-}
 
 /*******************************************************************************************/

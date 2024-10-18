@@ -154,5 +154,10 @@ namespace BeeLearning.Controllers
         {
             return _context.Videos.Any(e => e.Id == id);
         }
+
+        public IActionResult VideoAulas()
+        {
+            return View();
+        }
     }
 }

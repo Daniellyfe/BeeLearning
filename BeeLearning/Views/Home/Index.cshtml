@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 @* //////////////// Inicio Home ///////////////// *@
-<div>
+<body class="Homebeelearning">
     @{
         if (!User.Identity.IsAuthenticated)
         {
@@ -52,7 +52,11 @@
                     <div style="text-align: center;">
                         <a class="btn" asp-area="" asp-controller="Materias" asp-action="Linguagens">
                             <img src="~/Img/linguaestranheira.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                            <p>Linguagens</p>
+                            <div class="text-container">
+                                <p>Linguas</p>
+                                <p>Estrangeiras</p>
+                            </div>
+
                         </a>
                     </div>
                 </div>
@@ -60,7 +64,7 @@
                 <div style="text-align: center;">
                     <a class="btn" asp-area="" asp-controller="Materias" asp-action="Portugues">
                         <img src="~/Img/portugues.png" style="width:80px; height:80px;" class="rounded-circle" alt="...">
-                        <p>Português</p>
+                        <p>Linguagens</p>
                     </a>
                 </div>
 
@@ -129,7 +133,8 @@
 
             </div>
             <div class="linha"></div>
-        } }
+        } 
+        }
 
 
 
@@ -140,7 +145,8 @@
     <div class="alinhahome2">
         <img src="Img/BEE3 - Copia.png" class="alinhahome2" alt="..." style="width: 100%">
     </div>
-        }}
+        }
+        }
 
     @* //////TEXTO AO LADO/////// *@
 
@@ -327,4 +333,4 @@
             </div>
         }
     }
-</div>
+</body>

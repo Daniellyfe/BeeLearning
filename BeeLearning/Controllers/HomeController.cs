@@ -22,7 +22,7 @@ namespace BeeLearning.Controllers
             return View();
         }
 
-        public IActionResult BeeGames()
+        public IActionResult Notificacao()
         {
             return View();
         }

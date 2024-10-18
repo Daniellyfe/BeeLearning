@@ -23,25 +23,31 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li>
-                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="Quem">QuemSomos</a>
+                            <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="Quem">QUEM SOMOS</a>
                         </li>
                         @{
                             if (User.Identity.IsAuthenticated)
                             {
                                 <li>
-                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Home" asp-action="BeeGames">BEEGAMES</a>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="BeeGames" asp-action="Index">BEEGAMES</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Beeflixmodels" asp-action="Beeflix">Beeflix</a>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Beeflixmodels" asp-action="Beeflix">BEEFLIX</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Redacoes" asp-action="Redacao">Redações</a>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Videos" asp-action="VideoAulas">VIDEO AULA</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="MapasMentais" asp-action="Mapamental">Mapas Mentais</a>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Redacoes" asp-action="Redacao">REDAÇÕES</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="MapasMentais" asp-action="Mapamental">MAPAS MENTAIS</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" style="color: black; font-weight:400; font-size: 20px" asp-area="" asp-controller="Artigos" asp-action="Vestibulares">VESTIBULARES</a>
                                 </li>
                             }}
                             </ul>

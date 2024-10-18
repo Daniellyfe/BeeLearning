@@ -15,12 +15,16 @@
 
         </li>
         <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">
+            <a class="btn" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+             
                     <i class="bi bi-box-arrow-right"></i>
-                </button>
-            </form>
+              
+            </a>
         </li>
+
+
+
+       
     }
     else
     {
@@ -32,3 +36,7 @@
     </li> *@
     }
 </ul>
+
+
+<!-- Adicionando o arquivo JavaScript -->
+<script src="~/js/script.js"></script>
