@@ -1,103 +1,55 @@
-﻿const mario = document.querySelector('.mario')
-const pipe = document.querySelector('.pipe')
+﻿let score = 0; // Pontuação inicial
+let phase = 1; // Fase inicial
+let speed = 5; // Velocidade inicial dos obstáculos
 
-const start = document.querySelector('.botaomario')
-const gameOver = document.querySelector('.game-over')
-
-audioStart = new Audio('../audios/audio_theme.mp3')
-audioGameOver = new Audio('../audios/audio_gameover.mp3')
-
-
-const startGame = () => {
-    pipe.classList.add('pipe-animation')
-    start.style.display = 'none'
-
-    // audio
-    audioStart.play()
+function startGame() {
+    score = 0; // Reseta pontuação
+    phase = 1; // Reseta fase
+    speed = 5; // Reseta velocidade
+    updateScore();
+    updateSpeed(); // Define a velocidade inicial
+    document.querySelector(".game-over").style.display = "none"; // Esconde Game Over
+    document.querySelector(".game").style.display = "block"; // Mostra a tela do jogo
 }
 
-const restartGame = () => {
-    gameOver.style.display = 'none'
-    pipe.style.left = ''
-    pipe.style.right = '0'
-    mario.src = '../Img/beegif.gif'
-    mario.style.width = '150px'
-    mario.style.bottom = '0'
-
-    start.style.display = 'none'
-
-    audioGameOver.pause()
-    audioGameOver.currentTime = 0;
-
-    audioStart.play()
-    audioStart.currentTime = 0;
-
+function jump() {
+    // Lógica do pulo
+    score += 10; // Incrementa 10 pontos a cada pulo
+    updateScore(); // Atualiza pontuação na tela
+    checkPhase(); // Verifica se mudou de fase
 }
 
-const jump = () => {
-    mario.classList.add('jump')
-
-    setTimeout(() => {
-        mario.classList.remove('jump')
-    }, 800)
+function updateScore() {
+    document.getElementById("score").textContent = "Pontos: " + score; // Exibe a pontuação
 }
 
-const loop = () => {
-    setInterval(() => {
-        const pipePosition = pipe.offsetLeft
-        const marioPosition = window
-            .getComputedStyle(mario)
-            .bottom.replace('px', ' ')
-
-        if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-            pipe.classList.remove('.pipe-animation')
-            pipe.style.left = `${pipePosition}px`
-
-            mario.classList.remove('.jump')
-            mario.style.bottom = `${marioPosition}px`
-
-            mario.src = '../Img/beemorta.png'
-            mario.style.width = '80px'
-            mario.style.marginLeft = '50px'
-
-
-            function stopAudioStart() {
-                audioStart.pause()
-            }
-            stopAudioStart()
-
-            audioGameOver.play()
-
-            function stopAudio() {
-                audioGameOver.pause()
-            }
-            setTimeout(stopAudio, 7000)
-
-            gameOver.style.display = 'flex'
-
-            clearInterval(loop)
-        }
-    }, 10)
-}
-
-loop()
-
-document.addEventListener('keypress', e => {
-    const tecla = e.key
-    if (tecla === ' ') {
-        jump()
+function checkPhase() {
+    if (score >= 100 * phase) { // Ao atingir múltiplos de 100 pontos, muda de fase
+        phase += 1; // Incrementa fase
+        increaseSpeed(); // Aumenta a velocidade
+        alert("Fase " + phase + " desbloqueada! A velocidade aumentou!");
     }
-})
+}
 
-document.addEventListener('touchstart', e => {
-    if (e.touches.length) {
-        jump()
+function increaseSpeed() {
+    speed -= 0.5; // Aumenta a velocidade diminuindo o intervalo de animação
+    if (speed < 2) {
+        speed = 2; // Define um limite mínimo de velocidade
     }
-})
+    updateSpeed(); // Atualiza a velocidade no CSS
+}
 
-document.addEventListener('keypress', e => {
-    const tecla = e.key
-    if (tecla === 'Enter') {
-        startGame()
-    }
-})
+function updateSpeed() {
+    document.querySelector(".pipe").style.animationDuration = speed + "s"; // Ajusta a velocidade do cano
+    document.querySelector(".clouds").style.animationDuration = (speed + 5) + "s"; // Ajusta a velocidade das nuvens
+}
+
+function restartGame() {
+    score = 0; // Reseta a pontuação
+    phase = 1; // Reseta a fase
+    speed = 5; // Reseta a velocidade
+    updateScore();
+    updateSpeed();
+    document.querySelector(".game-over").style.display = "none"; // Esconde a tela de Game Over
+    document.querySelector(".game").style.display = "block"; // Mostra a tela de jogo
+}
