@@ -127,3 +127,9 @@ button {
 .highlight {
     color: #7303c0;
 }
+
+#botaofechar {
+    float: right;
+    margin: 100px 50px 0px 0px;
+    font-size: 25px;
+}

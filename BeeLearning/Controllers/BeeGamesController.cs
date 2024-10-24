@@ -172,5 +172,15 @@ namespace BeeLearning.Controllers
             return View();
         }
 
+        public IActionResult Cobrinha()
+        {
+            return View();
+        }
+
+        public IActionResult Jgmatematico()
+        {
+            return View();
+        }
+
     }
 }

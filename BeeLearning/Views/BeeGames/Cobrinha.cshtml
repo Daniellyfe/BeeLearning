@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha</title>
+    <link rel="stylesheet" href="~/css/cobrinhaestilo.css">
+</head>
+<body class="cobrinhabody">
+
+
+    <div class="alinhacobra1">
+        <a id="botaofechar" type="button" class="btn-close" aria-label="Fechar" onclick="window.close();" asp-area="" asp-controller="BeeGames" asp-action="Index"></a>
+    </div>
+
+
+
+    <div class="difficulty-selection">
+        <h2 style="color:#733434;">Escolha a dificuldade:</h2>
+        <button id="easyButton" class="dificuldade" class="btn">Fácil</button>
+        <button id="mediumButton" class="dificuldade" class="btn">Médio</button>
+        <button id="hardButton" class="dificuldade" class="btn">Difícil</button>
+    </div>
+
+
+
+    <div class="game-container" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+        <div class="scoreboard">
+            <h1>Pontuação: <span id="score">0</span></h1>
+            <button id="restartButton" style="display: none; background-color: #ff0000; color:white;">Jogar novamente</button>
+
+        </div>
+
+
+    </div>
+    <script src="~/js/cobrinhajs.js"></script>
+</body>
+</html>

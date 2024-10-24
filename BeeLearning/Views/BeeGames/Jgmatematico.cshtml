@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Matemático</title>
+    <link rel="stylesheet" href="~/css/jgmatematico.css">
+</head>
+<a id="botaofechar" type="button" class="btn-close" aria-label="Close" asp-controller="BeeGames" asp-action="Index"></a>
+
+<body>
+    
+    <div class="game-container">
+        <div class="controls">
+            <label for="question-count" class="perguntas">Quantas perguntas?</label>
+            <input type="number" id="question-count" min="1" max="30" value="5">
+            <label for="difficulty" class="dificuldade">Dificuldade:</label>
+            <select id="difficulty">
+                <option value="easy">Fácil</option>
+                <option value="medium">Médio</option>
+                <option value="hard">Difícil</option>
+            </select>
+            <button id="start-button" class="botaoiniciar btn">Iniciar</button>
+        </div>
+
+        <div class="remaining-questions"></div>
+        <div class="correct-count">Acertos: 0</div>
+
+        <div class="question-container">
+            <div class="question"></div>
+            <input type="number" class="answer btn" placeholder="Sua resposta">
+            <button class="submit-answer">Enviar Resposta</button>
+            <a id="reset-button" class="botaoiniciar btn" asp-controller="BeeGames" asp-action="Jgmatematico">Resetar</a>
+        </div>
+      
+
+
+        <div class="moves"></div>
+        <div class="timer"></div>
+        <div class="win"></div>
+    </div>
+
+    <script src="~/js/jgmatematico.js"></script>
+</body>
+</html>

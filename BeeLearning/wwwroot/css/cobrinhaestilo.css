@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cobrinhabody {
+    background-image: url('/Img/cobrinha1.png'); /* Caminho da imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    display: flex; /* Usar Flexbox para centralizar */
+    flex-direction: column; /* Alinha itens na vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão */
+    background-color:white;
+}
+
+canvas {
+    margin-left:35%;
+    border: 3px solid black;
+    justify-content: center; /* Centraliza verticalmente */
+    background-image: url('/Img/grama.png'); /* Caminho da imagem */
+    display: flex;
+}
+.difficulty-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.dificuldade {
+    background-color: #ff0000;
+}
+
+button:hover {
+    background-color: #f95252;
+}
+
+
+
+.alinhacobra1 {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    padding: 5px; /* Espaçamento interno reduzido */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    display: flex; /* Para alinhar itens horizontalmente */
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-top: -10px; /* Move o cabeçalho para cima */
+}
+
+.btn-close {
+    /* Adicione estilos para o botão fechar aqui */
+    width: 30px; /* Ajuste a largura do botão */
+    height: 30px; /* Ajuste a altura do botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+}
+
+
+#botaofechar {
+    float: right;
+    margin: 100px 50px 0px 0px;
+    font-size: 25px;
+}

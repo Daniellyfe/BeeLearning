@@ -385,7 +385,7 @@ iframe {
 
 /****************************************************************/
 /****************************************************************/
-/*********************REDAÇÃO***********************/
+/***************************REDAÇÃO******************************/
 
 
 
@@ -602,6 +602,7 @@ iframe {
 
 
 /*******************************************************************************************/
+/*******************************************************************************************/
 /******************************************JOGOS********************************************/
 
 
@@ -610,6 +611,7 @@ iframe {
     display: flex;
     margin: 0;
     padding: 0;
+    background-color: #fffbe9;
 }
 
 .gamesdiv1 {
@@ -619,8 +621,78 @@ iframe {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 200px;
-    margin-bottom: 100px
+    margin-bottom: 300px
 }
 
 
+.gamesdiv2 {
+    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+.gamesdiv3 {
+    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+/* Adicione ao final do seu CSS existente */
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+    button:hover {
+        background-color: #218838; /* Verde escuro */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*******************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/**************************************VESTIBULARES******************************************/
+.ves {
+    width: 80px;
+    margin-left: 40%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.ves1 {
+    color: black;
+}
+
+.alinhaves1 {
+    display: flex;
+    justify-content: space-between; /* Coloca a imagem à esquerda e o h1 à direita */
+    align-items: center; /* Alinha verticalmente no centro */
+    width: 100%; /* Garante que a div ocupe toda a largura */
+}

@@ -1,0 +1,149 @@
+#botaofechar {
+    float: right;
+    margin: 0px 50px 0px 0px;
+    font-size: 25px;
+}
+
+
+body {
+    background-color: #d0ded359;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Botão iniciar */
+.botaoiniciar {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #95d8a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+.botaoiniciar:hover{
+    background-color: #648468;
+    color:white;
+}
+
+
+
+
+
+
+
+
+/* Container principal do jogo */
+.game-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 38%;
+}
+
+/* Estilo dos controles do jogo (dificuldade, quantidade) */
+.controls label {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+
+/* Container das perguntas (escondido no início) */
+.question-container {
+    margin-top: 20px;
+    display: none;
+}
+
+/* Estilo das perguntas */
+.question {
+    font-weight: 900;
+    font-size: 30px;
+    color: #94c4a6;
+    margin-bottom: 15px;
+}
+
+/* Campo de entrada da resposta */
+.answer {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+/* Botão enviar resposta */
+.submit-answer {
+    padding: 8px 16px;
+    background-color: #b5dfbe;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+    .submit-answer:hover {
+        background-color: #a2d4a9;
+    }
+
+/* Estilo do contador de acertos, movimentos, e timer */
+.correct-count, .moves, .timer, .remaining-questions {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Estilo da mensagem de vitória */
+.win {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #28a745;
+}
+
+/* Estilo geral para botões */
+.btn {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.botaoreiniciar {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 200px;
+    background-color: #F1B408
+}
+
+.dificuldade {
+    color: #94c4a6;
+}
+
+.perguntas {
+    color: #94c4a6;
+}
