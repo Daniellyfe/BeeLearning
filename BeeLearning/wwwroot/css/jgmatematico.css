@@ -1,18 +1,13 @@
-#botaofechar {
-    float: right;
-    margin: 0px 50px 0px 0px;
-    font-size: 25px;
-}
-
 
 body {
     background-color: #d0ded359;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
+    height: 100vh; /* Certifique-se de que o corpo ocupa a altura total da tela */
 }
+
 
 .container {
     background-color: white;
@@ -30,6 +25,14 @@ h1 {
     font-size: 18px;
 }
 
+
+.btn-close {
+    position: absolute; /* Mantém o botão posicionado em relação ao elemento pai */
+    top: 100px; /* Ajuste este valor para mover mais para baixo */
+    right: 30px; /* Mantém o botão no canto superior direito */
+}
+
+
 /* Botão iniciar */
 .botaoiniciar {
     padding: 10px 20px;
@@ -46,13 +49,6 @@ h1 {
     color:white;
 }
 
-
-
-
-
-
-
-
 /* Container principal do jogo */
 .game-container {
     width: 400px;
@@ -61,7 +57,8 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-left: 38%;
+    margin: auto; /* Centraliza horizontalmente */
+    margin-top: 50px; /* Aumenta a margem superior para deslocar para baixo */
 }
 
 /* Estilo dos controles do jogo (dificuldade, quantidade) */
@@ -74,7 +71,6 @@ h1 {
 
 /* Container das perguntas (escondido no início) */
 .question-container {
-    margin-top: 20px;
     display: none;
 }
 

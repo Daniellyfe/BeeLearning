@@ -1,7 +1,7 @@
-﻿const mario = document.querySelector('.mario');
+﻿const bee = document.querySelector('.bee');
 const pipe = document.querySelector('.pipe');
-const startButton = document.querySelector('.botaomario');
-const restartButton = document.querySelector('.botaomario');
+const startButton = document.querySelector('.botaobee');
+const restartButton = document.querySelector('.botaobee');
 const gameOver = document.querySelector('.game-over');
 const victoryImage = document.querySelector('.victory-image');
 const audioStart = new Audio('../audios/audio_theme.mp3');
@@ -46,10 +46,10 @@ function startGame() {
 function jump() {
     if (!isJumping) {
         isJumping = true;
-        mario.classList.add('jump');
+        bee.classList.add('jump');
 
         setTimeout(() => {
-            mario.classList.remove('jump');
+            bee.classList.remove('jump');
             isJumping = false;
             jumps += 1;
             updatePhase(); // Atualiza a fase com base no número de pulos
@@ -62,13 +62,13 @@ function restartGame() {
 }
 
 function moveBeeRight() {
-    let left = parseInt(window.getComputedStyle(mario).getPropertyValue("left"));
+    let left = parseInt(window.getComputedStyle(bee).getPropertyValue("left"));
     left += 20;
     mario.style.left = left + 'px';
 }
 
 function moveBeeLeft() {
-    let left = parseInt(window.getComputedStyle(mario).getPropertyValue("left"));
+    let left = parseInt(window.getComputedStyle(bee).getPropertyValue("left"));
     left -= 20;
     if (left >= 0) {
         mario.style.left = left + 'px';
@@ -90,7 +90,7 @@ function updatePhase() {
             break;
         case 3:
             if (jumps >= 13) {
-                advancePhase(4, 0, "Fase 4: Quase lá! Pule mais 6 vezes!");
+                advancePhase(4, 0, "Fase 4: Quase lá! Pule mais 5 vezes!");
             }
             break;
         case 4:
@@ -146,14 +146,14 @@ function updatePipeSpeed() {
 }
 
 function checkCollision() {
-    const marioRect = mario.getBoundingClientRect();
+    const beeRect = bee.getBoundingClientRect();
     const pipeRect = pipe.getBoundingClientRect();
 
     if (
-        marioRect.right > pipeRect.left &&
-        marioRect.left < pipeRect.right &&
-        marioRect.bottom > pipeRect.top &&
-        marioRect.top < pipeRect.bottom
+        beeRect.right > pipeRect.left &&
+        beeRect.left < pipeRect.right &&
+        beeRect.bottom > pipeRect.top &&
+        beeRect.top < pipeRect.bottom
     ) {
         endGame(false); // Fim do jogo com derrota
     }
