@@ -9,20 +9,25 @@
 </head>
 <body style="margin-bottom:50px;">
 
-    <a id="botaofechar" type="button" class="btn-close" aria-label="Close" asp-controller="BeeGames" asp-action="Index"></a>
-
     <div class="game">
         <img class="mario" src="~/Img/beegif.gif" alt="Bee Character">
         <img class="pipe" src="~/Img/pipe.png" alt="Cano">
         <img class="clouds" src="~/Img/clouds.png" alt="Nuvens">
         <button class="botaomario" onclick="startGame()">Iniciar</button>
-        <div id="score">Pontos: 0</div> <!-- Exibição da pontuação -->
+       
     </div>
 
     <div class="game-over">
         <h1>Game Over :(</h1>
         <button class="botaomario" onclick="restartGame()">Reiniciar</button>
     </div>
+
+    <div class="victory-image" style="display: none;">
+        <img src="caminho/da/sua/imagem.jpg" alt="Você ganhou! Parabéns!">
+        <button class="botaomario" onclick="restartGame()">Reiniciar</button>
+    </div>
+    <div class="score" id="score">Pontos: 0</div>
+    <div class="phase-message" id="phase-message" style="font-size:40px; font-weight:700; text-align:center; color:#fccd35">BEM VINDO A BEE ADVENTURE</div> <!-- Mensagem da fase -->
 
     <script src="~/js/beegamesjs.js"></script>
 

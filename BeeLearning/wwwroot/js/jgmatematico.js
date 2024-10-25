@@ -113,7 +113,8 @@ const startGame = () => {
 
     state.loop = setInterval(() => {
         state.totalTime++;
-        selectors.moves.innerText = `${state.totalFlips} Movimentos`;
+        selectors.moves.innerText = `${state.totalFlips} Tentativas
+        `;
         selectors.timer.innerText = `Tempo: ${state.totalTime} Seg`;
     }, 1000);
 }
@@ -156,7 +157,7 @@ const submitAnswer = () => {
     state.currentQuestionIndex++;
 
     // Atualiza os valores de tempo e movimentos totais
-    selectors.moves.innerText = `${state.totalFlips} Movimentos`;
+    selectors.moves.innerText = `${state.totalFlips} Tentativas`;
     selectors.timer.innerText = `Tempo: ${state.totalTime} Seg`;
 
     // Verifica se ainda há perguntas
@@ -173,7 +174,7 @@ const endGame = () => {
         <span class="win-text">
             Você terminou o jogo!<br />
             Acertos: <span class="highlight">${state.correctAnswers}</span><br />
-            Movimentos: <span class="highlight">${state.totalFlips}</span><br />
+            Tentativas: <span class="highlight">${state.totalFlips}</span><br />
             Tempo: <span class="highlight">${state.totalTime}</span> segundos
         </span>
     `;
